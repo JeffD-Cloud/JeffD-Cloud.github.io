@@ -91,21 +91,37 @@
 				#header { padding: 6em 2em; }
 				#header h1 { font-size: 2.5em; }
 				#header p { font-size: 1.2em; }
+
+				/* UPDATED: The navigation bar is now fixed on mobile. The menu scrolls horizontally. */
+				#main { padding-top: 4em; } /* This accounts for the height of the fixed nav bar. */
+
+				#nav ul {
+					justify-content: flex-start;
+					overflow-x: auto;
+					white-space: nowrap;
+					-webkit-overflow-scrolling: touch;
+				}
+
+				#nav ul::-webkit-scrollbar {
+					display: none; /* Hide scrollbar for Chrome/Safari */
+				}
 				
-				/* UPDATED: Make nav scroll with page on tablet/mobile to prevent it from covering content */
-				#nav { position: static; }
-				#main { padding-top: 0; } /* UPDATED: Remove padding now that nav is not fixed */
-				#wrapper { padding: 4em 0 2em 0; } /* Adjust wrapper padding */
-				#wrapper > * > .inner { padding: 0 2em; } /* UPDATED: Reduce horizontal padding */
+				#nav ul {
+  					scrollbar-width: none; /* Hide scrollbar for Firefox */
+				}
+
+				#nav ul li {
+					flex-shrink: 0; /* Prevent items from shrinking */
+					padding: 0.5em 1em; /* Adjust padding for the row layout */
+				}
+
+				#wrapper > * > .inner { padding: 0 2em; }
 
 				.features article { width: 100%; padding: 3em 0; }
 				.portfolio article { display: block; margin: 0 0 3rem 0; }
 				.portfolio article .image, .portfolio article .inner { width: 100%; padding: 0; }
 				.portfolio article .inner { padding-top: 2em; }
 				.portfolio article:nth-child(even) .inner { padding: 2em 0 0 0; }
-
-				#nav ul { flex-direction: column; }
-				#nav ul li { padding: 0.8em 0; }
 			}
 			
 			/* NEW: Further adjustments for smaller phone screens */
