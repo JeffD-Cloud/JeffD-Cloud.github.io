@@ -91,13 +91,33 @@
 				#header { padding: 6em 2em; }
 				#header h1 { font-size: 2.5em; }
 				#header p { font-size: 1.2em; }
+				
+				/* UPDATED: Make nav scroll with page on tablet/mobile to prevent it from covering content */
+				#nav { position: static; }
+				#main { padding-top: 0; } /* UPDATED: Remove padding now that nav is not fixed */
+				#wrapper { padding: 4em 0 2em 0; } /* Adjust wrapper padding */
+				#wrapper > * > .inner { padding: 0 2em; } /* UPDATED: Reduce horizontal padding */
+
 				.features article { width: 100%; padding: 3em 0; }
 				.portfolio article { display: block; margin: 0 0 3rem 0; }
 				.portfolio article .image, .portfolio article .inner { width: 100%; padding: 0; }
 				.portfolio article .inner { padding-top: 2em; }
 				.portfolio article:nth-child(even) .inner { padding: 2em 0 0 0; }
+
 				#nav ul { flex-direction: column; }
 				#nav ul li { padding: 0.8em 0; }
+			}
+			
+			/* NEW: Further adjustments for smaller phone screens */
+			@media screen and (max-width: 736px) {
+				#header { padding: 4em 1.5em; }
+				#header h1 { font-size: 2.25em; }
+				#header p { font-size: 1.1em; }
+
+				#wrapper > * > .inner { padding: 0 1.5em; } /* Further reduce padding */
+
+				h2 { font-size: 1.5em; }
+				.features article { padding: 2.5em 0; }
 			}
 		</style>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
