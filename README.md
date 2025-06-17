@@ -14,7 +14,6 @@ Template: Solid State by HTML5 UP
 
 Hosting: GitHub Pages
 
-Contact
-LinkedIn: https://www.linkedin.com/in/jeff-damazyn-075b2036b/
+Contact:
 
 Email: JDamazyn314@gmail.com
