@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Jeff Damazyn - Cloud Engineering Portfolio</title>
@@ -24,11 +19,14 @@
 			body { background: #1b1f22; color: #ffffff; font-family: 'Source Sans Pro', sans-serif; font-size: 16pt; font-weight: 300; line-height: 1.65; }
 			a { color: #58c5c5; text-decoration: none; }
 			a:hover { text-decoration: underline; }
-			h1, h2, h3 { font-weight: 700; line-height: 1.5; margin: 0 0 1rem 0; text-transform: uppercase; }
+			h1, h2, h3, h4 { font-weight: 700; line-height: 1.5; margin: 0 0 1rem 0; text-transform: uppercase; }
 			h1 { font-size: 2.5em; }
 			h2 { font-size: 1.75em; }
 			h3 { font-size: 1.25em; }
+			h4 { font-size: 1.1em; text-transform: none; }
 			p { margin: 0 0 2rem 0; }
+            ul { margin: 0 0 2rem 1em; list-style: disc; padding-left: 1em; }
+            ul li { padding-left: 0.5em; }
 
 			/* Container */
 			.container { margin: 0 auto; max-width: 100%; width: 75em; }
@@ -42,17 +40,46 @@
 			section:last-child, article:last-child { margin-bottom: 0; }
 			header { margin: 0 0 3rem 0; }
 			header > p { display: block; margin: 1rem 0 0 0; }
+            
+            .button {
+                display: inline-block;
+                background-color: #58c5c5;
+                color: #1b1f22;
+                padding: 0.75em 1.5em;
+                border-radius: 4px;
+                text-decoration: none;
+                font-weight: 700;
+                text-transform: uppercase;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.2s ease-in-out;
+            }
+            .button:hover {
+                background-color: #ffffff;
+                text-decoration: none;
+            }
 
 			/* Wrapper */
 			#wrapper { padding: 6em 0 4em 0; }
 			#wrapper > * > .inner { padding: 0 4em; }
 
 			/* Header */
-			#header { position: relative; padding: 8em 0; background-image: url('https://placehold.co/1600x800/2a2f33/58c5c5?text=Cloud+Infrastructure'); background-position: center; background-size: cover; text-align: center; }
-			#header .logo { width: 5em; height: 5em; line-height: 5em; border: solid 2px #ffffff; border-radius: 100%; text-align: center; font-size: 2em; }
-			#header .logo .icon:before { font-size: 0.75em; }
-			#header h1 { font-size: 4em; margin: 0.5em 0 0.25em 0; }
+			#header { position: relative; padding: 14em 0 6em 0; background-color: #2a2f33; text-align: center; }
+			#header h1 { font-size: 3.5em; margin: 0 0 0.25em 0; }
 			#header p { font-size: 1.5em; margin-bottom: 2em; }
+            
+            #header::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(27, 31, 34, 0.65);
+            }
+            #header .inner {
+                position: relative;
+            }
 
 			/* Nav */
 			#nav { position: fixed; top: 0; left: 0; width: 100%; background: #1b1f22; color: #ffffff; text-align: center; z-index: 1000; padding: 0.5em 0; }
@@ -61,12 +88,11 @@
 			#nav ul li a { color: #ffffff; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.9em; }
 
 			/* Main */
-			#main { padding-top: 4em; } /* Add padding to account for fixed nav */
+			#main { padding-top: 4em; }
 
 			/* Features */
 			.features { display: flex; flex-wrap: wrap; margin: 0 0 2rem 0; justify-content: center; }
-			.features article { width: 50%; padding: 4em 2em 2em 2em; text-align: center; }
-			.features article .icon { font-size: 5em; margin-bottom: 1em; }
+			.features article { width: 50%; padding: 2em; text-align: center; }
 
 			/* Portfolio */
 			.portfolio .features { display: block; }
@@ -76,6 +102,69 @@
 			.portfolio article .inner { width: 60%; padding: 0 0 0 3em; }
 			.portfolio article:nth-child(even) { flex-direction: row-reverse; }
 			.portfolio article:nth-child(even) .inner { padding: 0 3em 0 0; }
+            .portfolio article .image.main { width: 100%; margin-bottom: 2em; }
+
+            /* === CUSTOM STYLES START HERE === */
+			.text-center { text-align: center; }
+			
+			.header-background-text {
+				position: absolute;
+				top: 1.5em;
+				left: 0;
+				right: 0;
+				z-index: 0;
+				text-align: center;
+				color: #58c5c5;
+				font-size: 4.5em;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				pointer-events: none;
+			}
+			
+			.accent-color {
+				color: #58c5c5;
+				font-size: 1.5em;
+			}
+			
+			/* Rule to style the headers in the Skills, Experience, and Certifications sections */
+			#two .features article h3,
+			#three .features article h3,
+			#five .features article h3 {
+				color: #58c5c5;
+				font-size: 1.5em; /* Larger than the default 1.25em */
+			}
+			
+			/* This is the new rule to constrain the banner image width */
+			.image.constrained-width {
+				max-width: 40%; /* Matches the width of the side-by-side project image */
+				margin: 0 auto 2em auto; /* Centers the image container */
+			}
+
+			/* This block overrides the default flex behavior for specific portfolio sections */
+			#three .features article,
+			.portfolio article.full-width {
+				display: block; /* This is the key fix: It disables display:flex */
+				width: 100%;
+				margin-bottom: 4rem;
+				padding: 0;
+			}
+			
+			/* This ensures the content inside the Experience section is centered */
+			#three .features article .inner {
+				width: 100%;
+				padding: 0;
+				text-align: center;
+			}
+			
+			/* This styles the full-width project for readability */
+			.portfolio article.full-width .inner {
+				margin: 0 auto;
+				max-width: 65em; /* Aligns with the rest of the site */
+				padding: 0;
+				text-align: left; /* Makes paragraphs and lists readable */
+			}
+            /* === CUSTOM STYLES END HERE === */
 
 			/* Footer */
 			#footer { padding: 4em 0 2em 0; background-color: #16191c; text-align: center; }
@@ -91,47 +180,25 @@
 				#header { padding: 6em 2em; }
 				#header h1 { font-size: 2.5em; }
 				#header p { font-size: 1.2em; }
-
-				/* UPDATED: The navigation bar is now fixed on mobile. The menu scrolls horizontally. */
-				#main { padding-top: 4em; } /* This accounts for the height of the fixed nav bar. */
-
-				#nav ul {
-					justify-content: flex-start;
-					overflow-x: auto;
-					white-space: nowrap;
-					-webkit-overflow-scrolling: touch;
-				}
-
-				#nav ul::-webkit-scrollbar {
-					display: none; /* Hide scrollbar for Chrome/Safari */
-				}
-				
-				#nav ul {
-  					scrollbar-width: none; /* Hide scrollbar for Firefox */
-				}
-
-				#nav ul li {
-					flex-shrink: 0; /* Prevent items from shrinking */
-					padding: 0.5em 1em; /* Adjust padding for the row layout */
-				}
-
+				#main { padding-top: 4em; }
+				#nav ul { justify-content: flex-start; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+				#nav ul::-webkit-scrollbar { display: none; }
+				#nav ul { scrollbar-width: none; }
+				#nav ul li { flex-shrink: 0; padding: 0.5em 1em; }
 				#wrapper > * > .inner { padding: 0 2em; }
-
 				.features article { width: 100%; padding: 3em 0; }
-				.portfolio article { display: block; margin: 0 0 3rem 0; }
+				.portfolio article { display: block; margin: 0 0 3rem 0; } /* This rule already fixes it for small screens */
 				.portfolio article .image, .portfolio article .inner { width: 100%; padding: 0; }
+				.image.constrained-width { max-width: 100%; } /* Lets the image be full-width on mobile */
 				.portfolio article .inner { padding-top: 2em; }
 				.portfolio article:nth-child(even) .inner { padding: 2em 0 0 0; }
 			}
 			
-			/* NEW: Further adjustments for smaller phone screens */
 			@media screen and (max-width: 736px) {
 				#header { padding: 4em 1.5em; }
 				#header h1 { font-size: 2.25em; }
 				#header p { font-size: 1.1em; }
-
-				#wrapper > * > .inner { padding: 0 1.5em; } /* Further reduce padding */
-
+				#wrapper > * > .inner { padding: 0 1.5em; }
 				h2 { font-size: 1.5em; }
 				.features article { padding: 2.5em 0; }
 			}
@@ -140,8 +207,7 @@
 	</head>
 	<body class="is-preload">
 
-		<!-- Nav -->
-			<nav id="nav">
+		<nav id="nav">
 				<ul>
 					<li><a href="#header">Home</a></li>
 					<li><a href="#one">About</a></li>
@@ -153,52 +219,43 @@
 				</ul>
 			</nav>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
+				<header id="header">
+						<div class="header-background-text">Cloud Security Engineering</div>
 						<div class="inner">
-							<div class="logo"><span class="icon fa fa-cloud"></span></div>
-							<h1>Hi, I'm Jeff Damazyn.</h1>
-							<p>A results-driven IT Professional transitioning into Cloud Engineering.</p>
+							<h1>Hi, I'm Jeff Damazyn</h1>
+							<p>A results-driven IT Professional transitioning into Cloud Security Engineering.</p>
 						</div>
 					</header>
 
-				<!-- Main -->
-					<main id="main">
+				<main id="main">
 
-						<!-- One (About) -->
-							<section id="one" class="wrapper style1 fade-up">
+						<section id="one" class="wrapper style1 fade-up">
 								<div class="inner">
-									<h2>About Me</h2>
+									<h2 class="text-center">About Me</h2>
 									<p>Results-driven IT professional with over 9 years of experience in system administration, network management, and technical support. Recently certified in Google Cybersecurity and actively pursuing CompTIA Security+, with a strong focus on transitioning into cloud engineering. Adept at managing cloud platforms like Office 365 and Google Workspace, defining and implementing access control policies, and configuring network security for over 800 users. Seeking to leverage a robust background in infrastructure support and a passion for cloud technologies in a challenging Cloud Engineer role.</p>
 								</div>
 							</section>
 
-						<!-- Two (Skills) -->
-							<section id="two" class="wrapper style2 spotlights">
+						<section id="two" class="wrapper style2 spotlights">
 								<div class="inner">
-									<h2>Core Skills & Technologies</h2>
-									<p>I am proficient in a wide range of essential IT and cloud-related technologies.</p>
+									<h2 class="text-center">Core Skills & Technologies</h2>
+									<p class="text-center">I am proficient in a wide range of essential IT and cloud-related technologies.</p>
 									<div class="features">
 										<article>
-											<a class="icon fa-cloud-upload-alt"><span class="label">Cloud</span></a>
 											<h3>Cloud Administration</h3>
 											<p>Google Workspace Admin, Microsoft 365 Admin, Cloud Identity Management, SaaS Application Support</p>
 										</article>
 										<article>
-											<a class="icon fa-network-wired"><span class="label">Networking</span></a>
 											<h3>Networking</h3>
 											<p>Firewall & Switch Configuration, Network Troubleshooting, WAN, LAN, VoIP, Wireless Technologies</p>
 										</article>
 										<article>
-											<a class="icon fa-shield-alt"><span class="label">Security</span></a>
 											<h3>Security</h3>
 											<p>Identity & Access Management, Network Security, Web Filtering, Vulnerability Management</p>
 										</article>
 										<article>
-											<a class="icon fa-server"><span class="label">Systems</span></a>
 											<h3>System Administration</h3>
 											<p>Windows, macOS, UNIX CLI, Hardware/Software Troubleshooting, Server Maintenance, User Support</p>
 										</article>
@@ -206,28 +263,24 @@
 								</div>
 							</section>
 
-						<!-- Three (Experience Portfolio) -->
-							<section id="three" class="wrapper style1 fade-up portfolio">
+						<section id="three" class="wrapper style1 fade-up portfolio">
 								<div class="inner">
-									<h2>Experience Portfolio</h2>
-									<p>Highlights from my role as Systems Administrator at Cor Jesu Academy (2015-Present).</p>
+									<h2 class="text-center">Experience Portfolio</h2>
+									<p class="text-center">Highlights from my role as Systems Administrator at Cor Jesu Academy (2015-Present).</p>
 									<div class="features">
 										<article>
-											<a href="#" class="image"><img src="https://placehold.co/800x600/58c5c5/ffffff?text=Cloud+Management" alt="" /></a>
 											<div class="inner">
 												<h3>Cloud Platform & Identity Management</h3>
 												<p>Served as the primary administrator for Google Workspace and Microsoft 365, managing cloud identities, access controls, and SaaS applications for a user base of over 800 students and staff.</p>
 											</div>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="https://placehold.co/800x600/444444/ffffff?text=Network+Security" alt="" /></a>
 											<div class="inner">
 												<h3>Network Infrastructure & Security</h3>
 												<p>Managed and configured core network infrastructure, including firewalls and switches, to enforce access control policies. Secured cloud services by configuring web filters and implementing IT policies to ensure safe internet usage and data protection.</p>
 											</div>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="https://placehold.co/800x600/58c5c5/ffffff?text=IT+Support" alt="" /></a>
 											<div class="inner">
 												<h3>Hybrid Environment Technical Support</h3>
 												<p>Provided comprehensive technical support for a hybrid environment, troubleshooting hardware, software, and network connectivity issues to minimize downtime and optimize technology for academic use through system upgrades and new solutions.</p>
@@ -237,43 +290,51 @@
 								</div>
 							</section>
 							
-						<!-- Four (Personal Projects) -->
-							<section id="four" class="wrapper style2 fade-up portfolio">
+						<section id="four" class="wrapper style2 fade-up portfolio">
 								<div class="inner">
-									<h2>Personal Cloud Projects</h2>
-									<p>Here are some of the hands-on projects I've built to apply and showcase my cloud engineering skills. Each includes a link to the source code on GitHub.</p>
+									<h2 class="text-center">Personal Cloud Projects</h2>
+									<p class="text-center">Here are some of the hands-on projects I've built to apply and showcase my cloud engineering skills.</p>
 									<div class="features">
-										<article>
-											<a href="#" class="image"><img src="https://placehold.co/800x600/2a2f33/ffffff?text=Project+Placeholder" alt="" /></a>
+
+										<article class="full-width">
 											<div class="inner">
-												<h3>Your Project Title Here</h3>
-												<p>Use this space to describe your project. Talk about the architecture, the technologies used (e.g., AWS Lambda, Terraform, Kubernetes), and the problem it solves. Make sure to link to your GitHub repo!</p>
+												<h3 class="text-center">Cloud-Hosted Static Website on AWS</h3>
+										
+												<h4 class="text-center">Project Overview</h4>
+												<p>This project involved deploying my personal portfolio website using a suite of Amazon Web Services (AWS) to build a secure, high-performance, and globally scalable hosting solution. The architecture was designed from the ground up to follow modern cloud infrastructure best practices, moving beyond simple hosting to a professional-grade deployment.</p>
+										
+												<h4 class="text-center accent-color">AWS Project Architecture</h4>
+										
+												<h4 class="text-center accent-color">Key Implementation Steps & Architectural Decisions</h4>
+												<p>The deployment was executed in several key phases:</p>
+												
+												<ul>
+													<li><strong>S3 Bucket Provisioning:</strong> An Amazon S3 bucket was created to provide robust and durable object storage for the website's static files (HTML, CSS, etc.).</li>
+													<li><strong>Global Content Delivery:</strong> An Amazon CloudFront distribution was configured as the Content Delivery Network (CDN). This caches the site at AWS edge locations worldwide, dramatically reducing latency for all users.</li>
+													<li><strong>Enforcing Security & Encryption:</strong> HTTPS was implemented by integrating a free SSL/TLS certificate from AWS Certificate Manager (ACM) with the CloudFront distribution. A viewer policy was set to automatically redirect all insecure HTTP requests to HTTPS.</li>
+													<li><strong>Securing the Origin:</strong> A crucial security measure was implemented by configuring an AWS IAM Origin Access Control (OAC). This ensures the S3 bucket is kept private from the public internet, allowing access only from the CloudFront distribution. This prevents direct access to the files and protects the origin.</li>
+												</ul>
+										
+												<p class="text-center"><strong>Technologies Used:</strong> Amazon S3, Amazon CloudFront, AWS Certificate Manager (ACM), and AWS IAM (Origin Access Control).</p>
+												
+												<p class="text-center"><a href="https://github.com/JeffD-Cloud/JeffD-Cloud.github.io" target="_blank" class="button">View Source Code on GitHub</a></p>
 											</div>
 										</article>
-										<article>
-											<a href="#" class="image"><img src="https://placehold.co/800x600/2a2f33/ffffff?text=Project+Placeholder" alt="" /></a>
-											<div class="inner">
-												<h3>Another Awesome Project</h3>
-												<p>As you build more, you can add more projects here. Simply copy and paste the 'article' block to create a new entry.</p>
-											</div>
-										</article>
+
 									</div>
 								</div>
 							</section>
 							
-						<!-- Five (Development) -->
-							<section id="five" class="wrapper style1 fade-up">
+						<section id="five" class="wrapper style1 fade-up">
 								<div class="inner">
-									<h2>Certifications & Development</h2>
-									<p>I am committed to continuous learning and professional growth in the cloud and security space.</p>
+									<h2 class="text-center">Certifications & Development</h2>
+									<p class="text-center">I am committed to continuous learning and professional growth in the cloud and security space.</p>
 									<div class="features">
 										<article>
-											<a class="icon fa-check-circle"><span class="label">Completed</span></a>
 											<h3>Google Cybersecurity Certificate</h3>
-											<p>Completed: 2024</p>
+											<p>Completed: May 2025</p>
 										</article>
 										<article>
-											<a class="icon fa-spinner"><span class="label">In Progress</span></a>
 											<h3>CompTIA Security+</h3>
 											<p>In Progress (Expected Completion: July 2025)</p>
 										</article>
@@ -283,8 +344,7 @@
 
 					</main>
 
-				<!-- Footer -->
-					<footer id="footer" class="wrapper style1-alt">
+				<footer id="footer" class="wrapper style1-alt">
 						<div class="inner">
 							<h2>Get in Touch</h2>
 							<ul class="icons">
