@@ -1,7 +1,7 @@
 Jeff Damazyn - Cloud Engineering Portfolio
 This repository contains the source code for my personal portfolio website, hosted on GitHub Pages.
 
-View the Live Site: https://JeffD-Cloud.github.io
+View the Live Site: https://d2wf31w0grzc56.cloudfront.net
 About This Project
 This is a single-page, responsive portfolio website designed to showcase my skills, professional experience, and personal projects as I transition into the field of Cloud Engineering.
 
