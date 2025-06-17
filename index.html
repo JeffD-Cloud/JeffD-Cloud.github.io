@@ -65,7 +65,7 @@
 
 			/* Header */
 			#header { position: relative; padding: 14em 0 6em 0; background-color: #2a2f33; text-align: center; }
-			#header h1 { font-size: 3.5em; margin: 0 0 0.25em 0; }
+			#header h1 { font-size: 3.0em; margin: 1.5em 0 0.25em 0; } 
 			#header p { font-size: 1.5em; margin-bottom: 2em; }
             
             #header::before {
@@ -109,7 +109,7 @@
 			
 			.header-background-text {
 				position: absolute;
-				top: 1.5em;
+				top: 0.5em; 
 				left: 0;
 				right: 0;
 				z-index: 0;
@@ -133,6 +133,14 @@
 			#five .features article h3 {
 				color: #58c5c5;
 				font-size: 1.5em; /* Larger than the default 1.25em */
+				margin-bottom: 1.5rem; /* Increased from 1rem to add space */
+			}
+
+			/* This rule recenters your skills sections and reduces their vertical spacing */
+			#two .features article {
+				width: 100%;
+				padding-top: 0.5em;
+				padding-bottom: 0.5em;
 			}
 			
 			/* This is the new rule to constrain the banner image width */
@@ -192,6 +200,11 @@
 				.image.constrained-width { max-width: 100%; } /* Lets the image be full-width on mobile */
 				.portfolio article .inner { padding-top: 2em; }
 				.portfolio article:nth-child(even) .inner { padding: 2em 0 0 0; }
+                
+                .header-background-text {
+                    font-size: 3em;
+                    top: 2.5em;
+                }
 			}
 			
 			@media screen and (max-width: 736px) {
@@ -201,6 +214,11 @@
 				#wrapper > * > .inner { padding: 0 1.5em; }
 				h2 { font-size: 1.5em; }
 				.features article { padding: 2.5em 0; }
+                
+                .header-background-text {
+                    font-size: 2.2em;
+                    top: 3em;
+                }
 			}
 		</style>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
